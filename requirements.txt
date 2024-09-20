@@ -1,0 +1,11 @@
+pandas
+numpy
+torch
+torchvision
+cmake
+face-recognition
+opencv-python
+matplotlib
+scikit-learn
+seaborn
+gradio
