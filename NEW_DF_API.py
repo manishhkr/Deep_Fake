@@ -14,10 +14,15 @@ import os
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
+# # Load text detection model and tokenizer
+# text_model_name = r"Deep_Fake"
+# text_model = AutoModelForSequenceClassification.from_pretrained(text_model_name)
+# text_tokenizer = AutoTokenizer.from_pretrained(text_model_name)
 # Load text detection model and tokenizer
-text_model_name = r"Deep_Fake"
+text_model_name = "Deep_Fake"  # This is the folder name which is also your repo name
 text_model = AutoModelForSequenceClassification.from_pretrained(text_model_name)
 text_tokenizer = AutoTokenizer.from_pretrained(text_model_name)
+
 
 # Video prediction model settings
 im_size = 112
