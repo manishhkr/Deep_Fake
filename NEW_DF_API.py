@@ -11,6 +11,12 @@ from PIL import Image as pImage
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import os
 
+# Set the model directory
+
+
+# The rest of your application logic...
+
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
 
@@ -19,9 +25,11 @@ CORS(app)  # Enable CORS for all routes
 # text_model = AutoModelForSequenceClassification.from_pretrained(text_model_name)
 # text_tokenizer = AutoTokenizer.from_pretrained(text_model_name)
 # Load text detection model and tokenizer
-text_model_name = "Deep_Fake"  # This is the folder name which is also your repo name
-text_model = AutoModelForSequenceClassification.from_pretrained(text_model_name)
-text_tokenizer = AutoTokenizer.from_pretrained(text_model_name)
+model_dir = "Deep_Fake"  # Folder name where the model files are located
+
+# Load text detection model and tokenizer
+text_model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+text_tokenizer = AutoTokenizer.from_pretrained(model_dir)
 
 
 # Video prediction model settings
