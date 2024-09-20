@@ -25,12 +25,11 @@ CORS(app)  # Enable CORS for all routes
 # text_model = AutoModelForSequenceClassification.from_pretrained(text_model_name)
 # text_tokenizer = AutoTokenizer.from_pretrained(text_model_name)
 # Load text detection model and tokenizer
-model_path = "./Deep_Fake/pytorch_model.bin"  # Adjust as necessary
-tokenizer_path = "./Deep_Fake"
+model_dir = "Deep_Fake/Deep_Fake"  # Path to the folder containing the model files
 
-# Load the model and tokenizer
-text_model = AutoModelForSequenceClassification.from_pretrained(tokenizer_path)
-text_tokenizer = AutoTokenizer.from_pretrained(tokenizer_path)
+# Load the text detection model and tokenizer from the local directory
+text_model = AutoModelForSequenceClassification.from_pretrained(model_dir)
+text_tokenizer = AutoTokenizer.from_pretrained(model_dir)
 
 
 # Video prediction model settings
